@@ -9,9 +9,39 @@ public class Course {
 		this.type = type;
 		this.attribute = attribute;
 		taken = false;
+		String[] course = {sem, name, type, attribute};
 	}
-	@Override
-	public String toString() {
-		return name+" is offered in "+sem+" and covers the attribute "+attribute;
+	public String getSem() {
+		return sem;
 	}
+	public void setSem(String sem) {
+		this.sem = sem;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
+	}
+	public String getAttribute() {
+		return attribute;
+	}
+	public void setAttribute(String attribute) {
+		this.attribute = attribute;
+	}
+	public boolean isTaken() {
+		return taken;
+	}
+	public void setTaken(boolean taken) {
+		this.taken = taken;
+	}
+
 }
+
+

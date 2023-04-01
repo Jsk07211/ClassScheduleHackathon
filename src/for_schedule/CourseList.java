@@ -17,6 +17,7 @@ public class CourseList {
 		
 		catalog = new ArrayList<>();
 		Scanner scnr = new Scanner(new File("courseList.txt"));
+		Scanner scan = new Scanner(System.in);
 		scnr.useDelimiter(",");
 		
 		
@@ -25,14 +26,27 @@ public class CourseList {
 			tName = scnr.next();
 			tType = scnr.next();
 			tAttribute = scnr.next().strip();
-			
 			c = new Course(tSem, tName, tType, tAttribute);
-			catalog.add(c);
+			System.out.println("Did you take this class?" + c.getName());
+			if(scan.next().equals("NO")) {
+				catalog.add(c);
+			}
 		}
 		scnr.close();
 		
-		for (Course c1 : catalog) {
-			System.out.println(c1);
-		}
+		
+		
+	}
+
+	public ArrayList<Course> getCatalog() {
+		return catalog;
+	}
+
+	public void setCatalog(ArrayList<Course> catalog) {
+		this.catalog = catalog;
+	}
+
+	public String get(int i){
+		return catalog.get(i).getName();
 	}
 }

@@ -1,32 +1,9 @@
 package for_schedule;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.*;
 
-public class Driver {
-
-	public static void main(String[] args)throws IOException{
-
-		
-		System.out.println("What's your name: ");
-		Scanner scan = new Scanner(System.in);
-		String name = scan.next();
-		System.out.println("What's your major: ");
-		String major = scan.next();
-		
-		CourseList cl = new CourseList();
-		cl.courseList();
-		
-		if(UserExists(name)) {
-			AddClasses(name, cl.getCatalog());
-		}else {
-			CreateProfile(name, major);
-			AddClasses(name, cl.getCatalog());
-		}
-		
-			
-	}
+public class Profile {
 	static void AddClasses(String name, ArrayList<Course> cls) {
         try {
             File writeFile = new File(name + ".json");
@@ -55,5 +32,4 @@ public class Driver {
         } catch (Exception e) {}
     }
 }
-
 
