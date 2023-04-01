@@ -45,7 +45,7 @@ public class CourseList {
 	public void setCatalog(ArrayList<Course> catalog) {
 		this.catalog = catalog;
 	}
-
+	
 	public String get(int i){
 		return catalog.get(i).getName();
 	}

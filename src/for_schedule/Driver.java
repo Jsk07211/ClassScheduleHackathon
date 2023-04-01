@@ -15,23 +15,23 @@ public class Driver {
 		System.out.println("What's your major: ");
 		String major = scan.next();
 		
-		CourseList cl = new CourseList();
-		cl.courseList();
+		CourseList cls = new CourseList();
+		cls.courseList();
 		
 		if(UserExists(name)) {
-			AddClasses(name, cl.getCatalog());
+			AddClasses(name, cls);
 		}else {
 			CreateProfile(name, major);
-			AddClasses(name, cl.getCatalog());
+			AddClasses(name, cls);
 		}
-		
+
 			
 	}
-	static void AddClasses(String name, ArrayList<Course> cls) {
+	static void AddClasses(String name, CourseList cls) {
         try {
-            File writeFile = new File(name + ".json");
+            File writeFile = new File(name + ".csv");
             FileWriter fw = new FileWriter(writeFile, true);
-            for (int i = 0; i < cls.size(); i++) {
+            for (int i = 0; i < cls.getCatalog().size(); i++) {
                 fw.write(cls.get(i) + "\r\n");
             }
             fw.close();
@@ -39,7 +39,7 @@ public class Driver {
     }
     static boolean UserExists (String name) {
         try {
-            File readFile = new File(name + ".json");
+            File readFile = new File(name + ".csv");
             if (readFile.exists()) {
                 return true;
             }
@@ -48,7 +48,7 @@ public class Driver {
     }
     static void CreateProfile(String name, String major) {
         try {
-            File writeFile = new File(name + ".json");
+            File writeFile = new File(name + ".csv");
             FileWriter fw = new FileWriter(writeFile, true);
             fw.write(name + "," + major + "\r\n");
             fw.close();
