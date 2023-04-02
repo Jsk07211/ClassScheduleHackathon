@@ -7,20 +7,9 @@
     width: 100%;
     height: 100vh;
     position: relative;
-    overflow: hidden;
-    background: green;
+    overflow: scroll;
+    background: rgb(193, 225, 193);
 }
-nav{
-    width: 80%;
-    position: fixed;
-    margin: 20px auto;
-    z-index: 1;
-    display: flex;
-    align-items: center;
-}
-.logo{
-    margin: auto;
-    width: 60%;
-    padding: 10px;
-    right: 10px;
+table, th, td {
+    border: 1px solid black;
 }
